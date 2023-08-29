@@ -23,8 +23,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
     "start": "react-scripts start",
-    "pre-deploy": "react-scripts build",
+    "build": "react-scripts build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

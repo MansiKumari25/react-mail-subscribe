@@ -13,7 +13,7 @@ function App() {
   console.log('state: ', show, params)
 
   const unsubscribe = () => {
-    fetch('http://home.local.cedcommerce.com/connector/test/testEmailUnsubscribeLink?token=' + params?.token ?? '',
+    fetch('https://dev-amazon-sales-channel-app-backend.cifapps.com/connector/test/testEmailUnsubscribeLink?token=' + params?.token ?? '',
       {
         method: 'GET',
         headers: {

@@ -1,4 +1,5 @@
 {
+  "homepage": "https://mansikumari25.github.io/react-mail-subscribe/",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -23,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "pre-deploy": "react-scripts build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -43,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }

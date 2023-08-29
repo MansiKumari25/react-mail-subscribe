@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-mail-subscribe/static/css/main.38bd9d38.css",
+    "main.js": "/react-mail-subscribe/static/js/main.3be02311.js",
+    "index.html": "/react-mail-subscribe/index.html",
+    "main.38bd9d38.css.map": "/react-mail-subscribe/static/css/main.38bd9d38.css.map",
+    "main.3be02311.js.map": "/react-mail-subscribe/static/js/main.3be02311.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38bd9d38.css",
+    "static/js/main.3be02311.js"
+  ]
+}

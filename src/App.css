@@ -1,0 +1,31 @@
+.align-center{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(68, 2, 129);
+}
+
+.t-success {
+  color: white;
+}
+
+.display
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  /* padding: 5%; */
+  /* background-color: rgb(68, 2, 129); */
+}
+
+.img
+{
+  height: 3vh;
+}
+
+.banner
+{
+  color: white;
+}

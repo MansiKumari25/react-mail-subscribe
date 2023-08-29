@@ -13,9 +13,13 @@ function App() {
   console.log('state: ', show, params)
 
   const unsubscribe = () => {
-    fetch('http://home.local.cedcommerce.com/connector/test/testEmailUnsubscribeLink?token=' + params?.token ?? '',
+    fetch('https://home.local.cedcommerce.com/connector/test/testEmailUnsubscribeLink?token=' + params?.token ?? '',
       {
-        method: 'GET'
+        method: 'GET',
+        headers: {
+          Accept: "*",
+          'Access-Control-Allow-Origin': "*"
+        }
       }).then((response) => {
         return response.json()
       }).then((res) => {

@@ -8,12 +8,14 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const params = queryString.parse(location.search);
-  const [show, setShow] = useState(params?.show == "true" ? true : false);
+  const [show, setShow] = useState(false);
+  const [message, setMessage] = useState(params?.message ?? false);
+  //const url = 'http://home.local.cedcommerce.com/connector/email/processEmailSubscription';
+  const url = 'https://dev-amazon-sales-channel-app-backend.cifapps.com/connector/email/processEmailSubscription?';
 
-  console.log('state: ', show, params)
 
   const unsubscribe = () => {
-    fetch('https://dev-amazon-sales-channel-app-backend.cifapps.com/connector/test/testEmailUnsubscribeLink?token=' + params?.token ?? '',
+    fetch(url + '?token=' + params?.token ?? '',
       {
         method: 'GET',
         headers: {
@@ -23,13 +25,25 @@ function App() {
       }).then((response) => {
         return response.json()
       }).then((res) => {
-        navigate(`/?token=${params.token}&show=${!res.success}`)
-        setShow(!res.success);
+        setShow(false);
+        setMessage(res.message);
       })
   }
 
   useEffect(() => {
-
+    fetch(url + '?token=' + (params?.token ?? '') + '&validate=true',
+      {
+        method: 'GET',
+        headers: {
+          Accept: "*",
+          'Access-Control-Allow-Origin': "*"
+        }
+      }).then((response) => {
+        return response.json()
+      }).then((res) => {
+        setShow(!res.already_implemented);
+        setMessage(res.message);
+      })
   }, [])
 
   return (
@@ -43,9 +57,10 @@ function App() {
         <div className='display'>
           {show && <Button variant="light" onClick={() => { unsubscribe() }}>
             Unsubscribe Mail
-          </Button>}
+          </Button>
+          }
           {!show &&
-            <h1 className='t-success'>Hurray! Your mail has been unsubscribed.</h1>
+            <h1 className='t-success'>{message}</h1>
           }
         </div>
       </div>

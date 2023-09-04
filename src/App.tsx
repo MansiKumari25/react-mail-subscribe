@@ -11,7 +11,7 @@ function App() {
   const [show, setShow] = useState(false);
   const [message, setMessage] = useState(params?.message ?? false);
   //const url = 'http://home.local.cedcommerce.com/connector/email/processEmailSubscription';
-  const url = 'https://dev-amazon-sales-channel-app-backend.cifapps.com/connector/email/processEmailSubscription?';
+  const url = 'https://dev-amazon-sales-channel-app-backend.cifapps.com/connector/email/processEmailSubscription';
 
 
   const unsubscribe = () => {
